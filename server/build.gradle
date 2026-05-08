@@ -1,0 +1,15 @@
+archivesBaseName = 'uuid-auth-server'
+
+loom {
+    serverOnlyMinecraftJar()
+    runs {
+        server {
+            server()
+            runDir = "run/server"
+            ideConfigGenerated = true
+        }
+    }
+}
+
+dependencies {
+}

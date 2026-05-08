@@ -1,0 +1,14 @@
+archivesBaseName = 'uuid-auth-client'
+
+loom {
+    runs {
+        client {
+            client()
+            runDir = "run/client"
+            ideConfigGenerated = true
+        }
+    }
+}
+
+dependencies {
+}

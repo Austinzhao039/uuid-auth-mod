@@ -1,0 +1,35 @@
+plugins {
+    id 'fabric-loom' version '1.5.8' apply false
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'fabric-loom'
+
+    group = 'top.austin666.mods.uuid_auth_mod'
+    version = '1.0.0'
+
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        mavenCentral()
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:1.20.4"
+        mappings "net.fabricmc:yarn:1.20.4+build.3:v2"
+        modImplementation "net.fabricmc:fabric-loader:0.15.11"
+        modImplementation "net.fabricmc.fabric-api:fabric-api:0.92.0+1.20.4"
+    }
+
+    java {
+        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release = 17
+    }
+}
